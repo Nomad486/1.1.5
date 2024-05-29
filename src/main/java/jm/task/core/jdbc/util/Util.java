@@ -18,19 +18,6 @@ public class Util {
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "A51yulpr57";
 
-    public static Connection getConnection() {
-        Connection connection = null;
-        try {
-            Class.forName(DB_DRIVER);
-            connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
-            connection.setAutoCommit(false);
-            System.out.println("Connected to database");
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-            System.out.println("Failed to connect to database");
-        }
-        return connection;
-    }
     private static SessionFactory sessionFactory;
 
     public static SessionFactory getSessionFactory() {
